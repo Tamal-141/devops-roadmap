@@ -34,9 +34,27 @@ That is a real DevOps engineer's job. And you will have done it.
 
 ---
 
+### PHASE 1 — Linux & Shell Scripting
+**Status: In Progress | Deadline: End of Month 1**
+**Objective**: Terminal mastery. No GUI allowed.
+
+---
+
+## 🚀 THE FAST-TRACK TIMELINE (4-6 MONTHS)
+> No sugar-coating. This is what it takes to switch from QA to DevOps/Cloud.
+
+| Month | Focus | Goal |
+|-------|-------|------|
+| **Month 1** | **Linux Mastery** | Be able to automate server health checks and file management. |
+| **Month 2** | **Docker Pro** | Containerize everything. Move from "it works on my PC" to "it works in Docker." |
+| **Month 3** | **CI/CD & AWS** | Jenkins/Actions + EC2. **Start Applying for Jobs.** |
+| **Month 4** | **Infrastructure as Code** | Terraform. High-value skill for interviews. |
+| **Month 5** | **Kubernetes** | Orchestration. Managing 100+ containers. |
+| **Month 6** | **Portfolio & Job Hunt** | Use your 1Finance experience to prove you've already done the work. |
+
+---
+
 ### PHASE 1 — Linux + Shell Scripting
-**Status: In Progress**
-**Time: 2-3 weeks**
 
 **What a real DevOps engineer does:**
 - Writes shell scripts to automate repetitive tasks

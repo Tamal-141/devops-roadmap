@@ -200,6 +200,14 @@ grep "tamal" users.log      ← find specific user activity
 
 ---
 
-*Add new commands below as you learn them:*
+## Git Sync Commands (Home ↔ Office)
 
----
+| Command | What it does | Example |
+|---------|-------------|---------|
+| `git clone <url>` | Downloads a repository for the first time | `git clone https://github.com/Tamal-141/devops-roadmap.git` |
+| `git pull` | Downloads the LATEST changes from GitHub (Do this first at Office!) | `git pull` |
+| `git add .` | Stages all your changes to be saved | `git add .` |
+| `git commit -m "msg"` | Saves your changes with a message | `git commit -m "Added daily log"` |
+| `git push` | Uploads your changes to GitHub (Do this before leaving!) | `git push` |
+
+---
