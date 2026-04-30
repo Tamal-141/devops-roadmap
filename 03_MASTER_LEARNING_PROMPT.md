@@ -102,19 +102,27 @@ I am transitioning to **DevOps / Cloud Engineering**.
 - Created first shell script at: `~/scripts/myfirst.sh`
 - Script navigates to TTB folder and lists files
 
+### Session: 30 April 2026 (Office — Claude)
+- Reviewed `free -h` output — understood all columns: total, used, free, available, buff/cache, swap
+- Key insight: always look at `available`, not `free` — available includes reclaimable cache
+- `df -h` — disk space per partition, `du -sh *` — find which folder is eating space
+- `uptime` — how long server has been running
+- Rule: when a partition hits 95%, use `du -sh *` to investigate before deleting anything
+- Swap = fake RAM on disk, slow — want it at 0 used always
+- **Next topic: file permissions (rwx, user/group/other, chmod with numbers)**
+
 ---
 
 ## WHERE WE STOPPED
 
-**Last session:** 24 April 2026 (Office — Claude)
+**Last session:** 30 April 2026 (Office — Claude)
 
 **Next session start here:**
-1. Open `~/scripts/myfirst.sh` in VS Code
-2. Change `ls` line to: `ls >> /mnt/c/TTB/script-log.txt`
-3. Add date line: `echo "Run on: $(date)" >> /mnt/c/TTB/script-log.txt`
-4. Run it — check log file was created
-5. That completes **Phase 1 LinkedIn project**
-6. Then start Phase 2 — Dockerfile for AutomationExercise project
+1. Teach file permissions — `ls -l` output, what `-rwxr-xr--` means
+2. User / Group / Others breakdown
+3. `chmod` with numbers (755, 644, 777) — not just `+x`
+4. Practice: create a file, change permissions, verify with `ls -l`
+5. After permissions → shell scripting variables and if/else
 
 ---
 
@@ -140,4 +148,4 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 ---
 
-*Last updated: 23 April 2026*
+*Last updated: 30 April 2026*
