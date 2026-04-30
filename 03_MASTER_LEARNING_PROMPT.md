@@ -109,7 +109,13 @@ I am transitioning to **DevOps / Cloud Engineering**.
 - `uptime` — how long server has been running
 - Rule: when a partition hits 95%, use `du -sh *` to investigate before deleting anything
 - Swap = fake RAM on disk, slow — want it at 0 used always
-- **Next topic: file permissions (rwx, user/group/other, chmod with numbers)**
+- **File permissions:** `-rwxr-xr-x` breakdown — owner/group/others, r=4 w=2 x=1
+- 755 = rwxr-xr-x (scripts), 644 = rw-r--r-- (normal files)
+- `chmod 755 filename`, `chmod 644 filename` — practiced both, verified with `ls -l`
+- Owner vs execute permission are different things — you can own a file without running it
+- **Processes:** `ps aux` — columns: USER, PID, %CPU, %MEM, COMMAND
+- PID = unique ID for every running process
+- Left off: what to check before killing a high CPU process (answer next session)
 
 ---
 
@@ -118,11 +124,11 @@ I am transitioning to **DevOps / Cloud Engineering**.
 **Last session:** 30 April 2026 (Office — Claude)
 
 **Next session start here:**
-1. Teach file permissions — `ls -l` output, what `-rwxr-xr--` means
-2. User / Group / Others breakdown
-3. `chmod` with numbers (755, 644, 777) — not just `+x`
-4. Practice: create a file, change permissions, verify with `ls -l`
-5. After permissions → shell scripting variables and if/else
+1. Answer: what do you check before killing a high CPU process? (PID known: 1234, command: python3 script.py, 99% CPU, 45% RAM)
+2. Teach `kill` command — `kill PID`, `kill -9 PID`
+3. Difference between kill and kill -9
+4. Then: `top` command — real time process monitor
+5. After that → shell scripting: variables and if/else
 
 ---
 
@@ -148,4 +154,4 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 ---
 
-*Last updated: 30 April 2026*
+*Last updated: 30 April 2026 — end of shift*
