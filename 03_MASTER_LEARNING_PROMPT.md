@@ -6,7 +6,7 @@
 
 ## WHO I AM
 
-My name is Tamal. I work at 1Finance as a QA automation engineer.
+My name is Tamal. I work at Atrina Technologies as a Junior QA Engineer.
 I am transitioning to **DevOps / Cloud Engineering**.
 
 **Current skill levels:**
@@ -117,18 +117,35 @@ I am transitioning to **DevOps / Cloud Engineering**.
 - PID = unique ID for every running process
 - Left off: what to check before killing a high CPU process (answer next session)
 
+### Session: 11 May 2026 (Office — Claude)
+- LinkedIn profile fully updated:
+  - Title changed: Trainee QA Engineer → Junior QA Engineer (promoted April 2026)
+  - Headline: `Junior QA Engineer | Playwright | API Testing | Azure DevOps | Upskilling in DevOps & Cloud`
+  - About section updated — honest, no fake CI/CD pipeline claim
+  - Skills added: Playwright, Git, GitHub, Linux, Docker, AWS, Azure DevOps Services, Performance Testing, k6
+  - Removed from headline: Selenium (college only, not current work)
+  - Top skills pinned: Playwright, API Testing, Azure DevOps Services
+  - Old "seeking new role" post — to be deleted
+  - Promotion post — to be created
+- Git sync workflow confirmed: office push → home pull via `03_MASTER_LEARNING_PROMPT.md`
+- Devops folder structure confirmed: `C:\Devops\devops-roadmap` → remote: `Tamal-141/devops-roadmap`
+
 ---
 
 ## WHERE WE STOPPED
 
-**Last session:** 30 April 2026 (Office — Claude)
+**Last session:** 11 May 2026 (Office — Claude)
 
 **Next session start here:**
 1. Answer: what do you check before killing a high CPU process? (PID known: 1234, command: python3 script.py, 99% CPU, 45% RAM)
 2. Teach `kill` command — `kill PID`, `kill -9 PID`
 3. Difference between kill and kill -9
-4. Then: `top` command — real time process monitor
+4. `top` command — real time process monitor
 5. After that → shell scripting: variables and if/else
+
+**LinkedIn pending actions:**
+- Delete old "seeking new role" post
+- Create promotion announcement post
 
 ---
 
@@ -154,4 +171,4 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 ---
 
-*Last updated: 30 April 2026 — end of shift*
+*Last updated: 11 May 2026 — end of session*
