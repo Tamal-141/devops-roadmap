@@ -130,18 +130,26 @@ I am transitioning to **DevOps / Cloud Engineering**.
 - Git sync workflow confirmed: office push → home pull via `03_MASTER_LEARNING_PROMPT.md`
 - Devops folder structure confirmed: `C:\Devops\devops-roadmap` → remote: `Tamal-141/devops-roadmap`
 
+### Session: 12 May 2026 (Home — Claude)
+- Linux basics revision: mkdir, touch, mv (rename), rm, ls, cat, grep, >, >>
+- Key rules: no spaces around `=` in variables, `$()` for command output, `./` to run scripts
+- **Variables:** `name="Tamal"`, read with `$name`
+- **if/else:** `[ $age -gt 18 ]`, operators: -gt, -lt, -eq, -ne, closes with `fi`
+- **for loop:** `for i in 1 2 3; do ... done` — no commas, spaces only
+- **Command substitution:** `result=$(command)` — stores command output in variable
+- Built `health-check.sh` — date, who, df -h, free -h using $() syntax
+- Script location: `~/scripts/health-check.sh`
+
 ---
 
 ## WHERE WE STOPPED
 
-**Last session:** 11 May 2026 (Office — Claude)
+**Last session:** 12 May 2026 (Home — Claude)
 
 **Next session start here:**
-1. Answer: what do you check before killing a high CPU process? (PID known: 1234, command: python3 script.py, 99% CPU, 45% RAM)
-2. Teach `kill` command — `kill PID`, `kill -9 PID`
-3. Difference between kill and kill -9
-4. `top` command — real time process monitor
-5. After that → shell scripting: variables and if/else
+1. processes — `kill PID`, `kill -9 PID`, difference between them
+2. `top` command — real time process monitor
+3. Then move to **Docker** — Dockerfile for bank automation project
 
 **LinkedIn pending actions:**
 - Delete old "seeking new role" post
@@ -171,4 +179,4 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 ---
 
-*Last updated: 11 May 2026 — end of session*
+*Last updated: 12 May 2026 — home session*
