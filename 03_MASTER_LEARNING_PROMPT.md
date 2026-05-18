@@ -6,7 +6,7 @@
 
 ## WHO I AM
 
-My name is Tamal. I work at Atrina Technologies as a Junior QA Engineer.
+My name is Tamal. I work at Atrina Technologies (placed at 1Finance client site) as a Junior QA Engineer.
 I am transitioning to **DevOps / Cloud Engineering**.
 
 **Current skill levels:**
@@ -57,7 +57,7 @@ I am transitioning to **DevOps / Cloud Engineering**.
 | 6 | Terraform | Not Started |
 
 **Main project:** Automate `automationexercise.com` with Playwright → Dockerize → CI/CD pipeline → Deploy on AWS
-**Do NOT use 1Finance for DevOps projects** — legal risk at office.
+**Do NOT use Atrina/1Finance client projects for DevOps portfolio** — keep personal projects separate. Use bank automation project or automationexercise.com instead.
 
 ---
 
@@ -130,6 +130,28 @@ I am transitioning to **DevOps / Cloud Engineering**.
 - Git sync workflow confirmed: office push → home pull via `03_MASTER_LEARNING_PROMPT.md`
 - Devops folder structure confirmed: `C:\Devops\devops-roadmap` → remote: `Tamal-141/devops-roadmap`
 
+### Session: 19 May 2026 (Office — Claude)
+- Cloned `playwright-banking-automation` into `C:\Devops\` 
+- Cloned `cypress-realworld-app` (MERN banking app) into `C:\Devops\`
+- Wrote Dockerfile for Playwright project — fixed base image from `node:18` to `mcr.microsoft.com/playwright:v1.58.2-noble`
+- `docker build -t banking-automation .` — image built successfully
+- `docker run banking-automation` still fails — banking app not running inside container
+- Installed Node 20, yarn, project dependencies in WSL
+- Tests run from PowerShell: **4 passed, 1 failed, 2 skipped**
+- Failed test: `auth.spec.js` — E2E Signup → Onboard → Logout → Re-Login
+- Transaction flow tests not yet written
+- Key learning: run tests from PowerShell (not WSL) — Ubuntu 26.04 not supported by Playwright yet
+- Next: fix failing auth test + write transaction flow + Docker Compose
+
+### Session: 13 May 2026 (Office — Claude)
+- Processes: `kill PID` = graceful (Terminated), `kill -9 PID` = force (Killed)
+- `$!` = special variable holding PID of last background process
+- `top` = live process monitor (refreshes every 2s), `ps aux` = snapshot
+- Docker WSL integration enabled on new laptop, personal Docker Hub account created
+- `docker run hello-world` — confirmed Docker working
+- Project plan: Dockerize Playwright bank automation tests (not the MERN app itself)
+- Left off: finding Playwright bank project location on home machine
+
 ### Session: 12 May 2026 (Home — Claude)
 - Linux basics revision: mkdir, touch, mv (rename), rm, ls, cat, grep, >, >>
 - Key rules: no spaces around `=` in variables, `$()` for command output, `./` to run scripts
@@ -144,12 +166,17 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 ## WHERE WE STOPPED
 
-**Last session:** 12 May 2026 (Home — Claude)
+**Last session:** 19 May 2026 (Office — Claude)
 
 **Next session start here:**
-1. processes — `kill PID`, `kill -9 PID`, difference between them
-2. `top` command — real time process monitor
-3. Then move to **Docker** — Dockerfile for bank automation project
+1. Fix failing auth test in `auth.spec.js:21` — E2E Signup → Onboard → Logout → Re-Login
+2. Write transaction flow tests (incomplete)
+3. Get all tests passing locally first
+4. Then Docker Compose — run banking app + Playwright tests together
+
+**To run tests locally:**
+- Terminal 1 (WSL): `cd /mnt/c/Devops/cypress-realworld-app && yarn start`
+- Terminal 2 (PowerShell): `cd C:\Devops\playwright-banking-automation && npx playwright test`
 
 **LinkedIn pending actions:**
 - Delete old "seeking new role" post
@@ -179,4 +206,4 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 ---
 
-*Last updated: 12 May 2026 — home session*
+*Last updated: 19 May 2026 — end of session*
