@@ -25,3 +25,24 @@
 - **Next Action**: Pull these changes in the office, and let's start writing the `run_tests.sh` script using `nano` or `vim`.
 
 ---
+
+## 🗓️ May 18, 2026
+
+### 🎯 Today's Goal: Complete Environment Parity
+**Objective**: Push the entire target banking application (`cypress-realworld-app`) to GitHub so it can be cloned on the office laptop.
+
+### 💻 Commands & Concepts Mastered
+1. **`git push -u origin develop`**: Pushing to a specific non-main branch (GitFlow).
+2. **Git Workflow Security**: Troubleshooting Personal Access Token (PAT) rejections due to missing `workflow` permissions by safely deleting old `.github/` workflows.
+3. **Environment Setup**: Understanding that end-to-end tests require the application to be running locally as the target.
+
+### 🛠️ Work Done
+- [x] Pushed Playwright tests repo.
+- [x] Successfully cleaned and pushed the entire backend/frontend of the banking app (`cypress-realworld-app`) to a personal GitHub repo.
+
+### 📝 Notes for Office
+- **First Task at Office**: Run `git clone https://github.com/Tamal-141/cypress-realworld-app.git` to pull the bank app.
+- Once cloned, we can spin up the app locally and finally run the Dockerized tests! 🚀
+
+
+---
