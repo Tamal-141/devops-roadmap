@@ -11,10 +11,11 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 **Current skill levels:**
 - Playwright & API Testing: 6/10 (background skill — NOT current focus)
-- Linux: 6/10
-- Docker: 3/10
+- Linux: 5/10
+- Docker: 5/10
 - AWS: 3/10 (basic EC2, SSH, .pem experience)
-- CI/CD, Kubernetes, Terraform: 0/10
+- GitHub Actions CI/CD: 3/10 (pipeline running, deploy pending)
+- Kubernetes, Terraform: 0/10
 
 **Goal:** Job-ready DevOps/Cloud Engineer in 6 months.
 
@@ -51,8 +52,8 @@ I am transitioning to **DevOps / Cloud Engineering**.
 |-------|-------|--------|
 | 1 | Linux + Shell Scripting | In Progress |
 | 2 | Docker | In Progress |
-| 3 | GitHub Actions CI/CD | Not Started |
-| 4 | AWS | Basics done |
+| 3 | GitHub Actions CI/CD | In Progress — CI working, CD (deploy) pending |
+| 4 | AWS | Basics done — EC2 deploy pending |
 | 5 | Kubernetes | Not Started |
 | 6 | Terraform | Not Started |
 
@@ -75,10 +76,17 @@ I am transitioning to **DevOps / Cloud Engineering**.
 ### Docker
 - Concepts: image = recipe, container = dish, isolation, Docker Hub
 - `docker run`, `docker run -it ubuntu bash`, `docker images`, `docker ps -a`, `docker rm`
-- Wrote first Dockerfile using `FROM` and `CMD`
+- `docker stop`, `docker container prune`, `docker rmi`, `docker rmi -f`
+- Wrote Dockerfile: FROM, WORKDIR, COPY, RUN, EXPOSE, CMD
 - `docker build -t name .` — build image
+- `docker run -p 5000:5000 --name backend --env-file .env myapp`
 - `docker login`, `docker tag`, `docker push` — pushed to Docker Hub
 - Difference: `RUN` = during build, `CMD` = when container starts
+- `ARG` = build-time variable, `ENV` = runtime variable
+- `host.docker.internal` = talk to host machine from inside container (not localhost)
+- Docker Compose: services, ports, env_file, args, depends_on, restart
+- `docker-compose up --build -d`, `docker-compose down`, `docker-compose logs`
+- Run docker-compose from the folder where docker-compose.yml lives
 - My image live at: `tamal141/my-first-image` on Docker Hub
 - Office firewall blocks `archive.ubuntu.com` — use pre-built images at office
 
@@ -162,21 +170,46 @@ I am transitioning to **DevOps / Cloud Engineering**.
 - Built `health-check.sh` — date, who, df -h, free -h using $() syntax
 - Script location: `~/scripts/health-check.sh`
 
+### Session: 2 June 2026 (Office + Home — Claude)
+- Docker Compose deep dive — ran MERN Task Manager (YouTuber Sangam project)
+- Fixed YouTuber's hardcoded AWS IP in docker-compose.yml → changed to localhost
+- Understood ARG vs ENV, host.docker.internal, why VITE rebuilds needed
+- Git workflow mastered: clone → branch → commit → push → PR flow
+- Renamed master → main branch, deleted old master, set default branch on GitHub
+- GitHub Actions CI pipeline WORKING — build-and-lint job passes in 35s ✅
+- Understood CI vs CD, manual QA vs automated testing in pipeline
+- Wrote Dockerfile and docker-compose.yml from scratch (practice scenarios)
+- GitHub Actions yml structure understood — on/jobs/steps/uses/run
+- PAT token needs `workflow` scope to push `.github/workflows/` files
+- YouTube course repo pushed: `Tamal-141/Mern-TaskWebsite-Project` on GitHub
+- Two projects confirmed:
+  1. YouTube course — MERN Task Manager → deploy on EC2 tomorrow
+  2. Portfolio project — Playwright tests → automationexercise.com → CI/CD → AWS
+- Banking app (cypress-realworld-app) too heavy for free tier EC2 — dropped from deploy plan
+- `.pem` file for EC2 is at HOME desktop — bring to office tomorrow
+
 ---
 
 ## WHERE WE STOPPED
 
-**Last session:** 19 May 2026 (Office — Claude)
+**Last session:** 2 June 2026 (Office laptop — Claude)
 
-**Next session start here:**
-1. Fix failing auth test in `auth.spec.js:21` — E2E Signup → Onboard → Logout → Re-Login
-2. Write transaction flow tests (incomplete)
-3. Get all tests passing locally first
-4. Then Docker Compose — run banking app + Playwright tests together
+**Next session start here (OFFICE — bring .pem from home):**
+1. SSH into EC2 using `.pem` file
+2. Install Docker on EC2
+3. Add GitHub secrets to `Tamal-141/Mern-TaskWebsite-Project`:
+   - `EC2_HOST` = EC2 public IP
+   - `EC2_USER` = ubuntu
+   - `EC2_KEY` = contents of .pem file
+   - `EC2_APP_DIR` = path where app lives on EC2
+4. Change `if: false` back to `if: github.event_name == 'push'` in ci.yml
+5. Push → watch full CI/CD pipeline deploy to AWS automatically
 
-**To run tests locally:**
-- Terminal 1 (WSL): `cd /mnt/c/Devops/cypress-realworld-app && yarn start`
-- Terminal 2 (PowerShell): `cd C:\Devops\playwright-banking-automation && npx playwright test`
+**YouTube course repo:** `C:\Devops-Youtube-Sangam\` → GitHub: `Tamal-141/Mern-TaskWebsite-Project`
+**CI pipeline:** already working (build-and-lint passes) — deploy job disabled until EC2 ready
+
+**GitHub Actions pending:**
+- Scenario 3 practice (write yml from scratch) — not done yet
 
 **LinkedIn pending actions:**
 - Delete old "seeking new role" post
@@ -206,4 +239,4 @@ I am transitioning to **DevOps / Cloud Engineering**.
 
 ---
 
-*Last updated: 19 May 2026 — end of session*
+*Last updated: 2 June 2026 — end of session*

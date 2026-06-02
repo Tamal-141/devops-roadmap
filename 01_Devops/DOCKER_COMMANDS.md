@@ -235,3 +235,45 @@ docker run tamal141/my-first-image
 *Add new commands below as you learn them:*
 
 ---
+
+## Container & Image Cleanup
+
+| Command | What it does |
+|---------|-------------|
+| `docker stop <container_id>` | Stop a running container |
+| `docker stop c1 c2 c3` | Stop multiple containers at once |
+| `docker rm <container_id>` | Remove a stopped container (stop first, or use -f) |
+| `docker rm -f <container_id>` | Force remove (no need to stop first) |
+| `docker container prune` | Remove ALL stopped containers at once |
+| `docker rmi nginx` | Remove an image |
+| `docker rmi nginx hello-world` | Remove multiple images at once |
+| `docker rmi -f nginx` | Force remove an image |
+
+---
+
+## Build & Run with Port + Name + Env
+
+| Command | What it does |
+|---------|-------------|
+| `docker build -t mern-backend .` | Build image and name it mern-backend |
+| `docker run -p 5000:5000 --name backend mern-backend` | Run with port mapping and container name |
+| `docker run -p 5000:5000 --name backend --env-file .env mern-backend` | Run with env file (for secrets like MONGO_URI) |
+
+**Port mapping:** `-p 5000:5000` = your machine port 5000 → container port 5000
+
+---
+
+## Docker Compose Commands
+
+| Command | What it does |
+|---------|-------------|
+| `docker-compose up --build` | Build images and start all services (foreground — locks terminal) |
+| `docker-compose up --build -d` | Build and start in background (detached — terminal stays free) |
+| `docker-compose down` | Stop and remove all containers defined in docker-compose.yml |
+| `docker-compose logs` | View logs from all services |
+| `docker-compose logs backend` | View logs from backend service only |
+| `docker-compose logs frontend` | View logs from frontend service only |
+
+> 💡 Always run `docker-compose` from the folder where `docker-compose.yml` lives
+
+---
