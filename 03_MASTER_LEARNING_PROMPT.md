@@ -182,34 +182,44 @@ I am transitioning to **DevOps / Cloud Engineering**.
 - GitHub Actions yml structure understood — on/jobs/steps/uses/run
 - PAT token needs `workflow` scope to push `.github/workflows/` files
 - YouTube course repo pushed: `Tamal-141/Mern-TaskWebsite-Project` on GitHub
-- Two projects confirmed:
-  1. YouTube course — MERN Task Manager → deploy on EC2 tomorrow
-  2. Portfolio project — Playwright tests → automationexercise.com → CI/CD → AWS
-- Banking app (cypress-realworld-app) too heavy for free tier EC2 — dropped from deploy plan
-- `.pem` file for EC2 is at HOME desktop — bring to office tomorrow
+
+### Session: 4 June 2026 (Office — Claude)
+- SSH into EC2 successfully using .pem file ✅
+- Docker already installed on EC2 ✅
+- Cloned MERN project on EC2 ✅
+- Created MongoDB Atlas free cluster ✅
+- Connected backend to MongoDB Atlas (password: Tamal1234) ✅
+- Deployed MERN app on EC2 with docker-compose ✅
+- App live at `http://44.200.68.71:5173` ✅
+- Opened ports 5173 and 5000 in EC2 Security Group ✅
+- GitHub Actions 4 secrets added: EC2_HOST, EC2_USER, EC2_KEY, EC2_APP_DIR
+- CI job passes ✅ — CD (auto-deploy) job failing due to SSH key format issue in GitHub secrets
+- EC2 IP changes every restart — need to update EC2_HOST secret and docker-compose.yml each time
+- Key learning: VITE_API_URL must be EC2 public IP (not localhost) when deployed on EC2
 
 ---
 
 ## WHERE WE STOPPED
 
-**Last session:** 2 June 2026 (Office laptop — Claude)
+**Last session:** 4 June 2026 (Office — Claude)
 
-**Next session start here (OFFICE — bring .pem from home):**
-1. SSH into EC2 using `.pem` file
-2. Install Docker on EC2
-3. Add GitHub secrets to `Tamal-141/Mern-TaskWebsite-Project`:
-   - `EC2_HOST` = EC2 public IP
-   - `EC2_USER` = ubuntu
-   - `EC2_KEY` = contents of .pem file
-   - `EC2_APP_DIR` = path where app lives on EC2
-4. Change `if: false` back to `if: github.event_name == 'push'` in ci.yml
-5. Push → watch full CI/CD pipeline deploy to AWS automatically
+**Next session start here:**
+1. Fix GitHub Actions CD deploy job — SSH key issue
+   - Try: assign Elastic IP to EC2 (static IP — never changes on restart)
+   - Then update EC2_HOST secret once and never again
+2. Once CD works → full pipeline complete: push code → auto deploy to AWS
+3. Then move to next phase — Kubernetes basics
+
+**EC2 details:**
+- Instance ID: `i-0c34aa25d9f2819e5`
+- Current IP: `44.200.68.71` (changes on restart — fix with Elastic IP)
+- .pem file: `C:\Users\dey42\.ssh\devops-key.pem`
+- App folder on EC2: `/home/ubuntu/Mern-TaskWebsite-Project/devops-youtube-course-2025`
+- MongoDB Atlas password: `Tamal1234`
+- MongoDB Atlas user: `dey420476_db_user`
 
 **YouTube course repo:** `C:\Devops-Youtube-Sangam\` → GitHub: `Tamal-141/Mern-TaskWebsite-Project`
-**CI pipeline:** already working (build-and-lint passes) — deploy job disabled until EC2 ready
-
-**GitHub Actions pending:**
-- Scenario 3 practice (write yml from scratch) — not done yet
+**App live at:** `http://44.200.68.71:5173` (update IP after each EC2 restart)
 
 **LinkedIn pending actions:**
 - Delete old "seeking new role" post
